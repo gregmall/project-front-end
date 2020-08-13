@@ -1,39 +1,35 @@
-import React from 'react';
-import './App.css';
-import { getBeer } from './beer-api.js';
+import React, { Component } from 'react'
+import {
+    BrowserRouter as Router, 
+    Route, 
+    Switch,
+    Link
+} from 'react-router-dom';
+import ListBeer from './ListBeer.js';
+import DetailPage from './DetailPage.js';
+import CreateBeer from './CreateBeer.js';
 
- class App extends React.Component {
-
-  state = {
-    beers: []
-
-  }
-
-  componentDidMount = async () => {
-    const data = await getBeer() 
-
-    this.setState({
-      beers: data.body
-    })
-  }
-
-
-  render() {
-    return (
-      <div className="App">
-        <h2>BEERS:</h2>
-        {
-          this.state.beers.map((beer) => {
-            return <div className="display"><img src={beer.image} alt={beer.image} />  Name :  {beer.name} - Domestic: {beer.domestic ? 'YES' : 'NO'} - Type: {beer.category}  - Price ${beer.price}
+export default class App extends Component {
+    render() {
+        return (
+            <div>
+                <Router>
+                    <Switch>
+                        <Route 
+                            path="/" 
+                            exact
+                            render={(routerProps) => <ListBeer {...routerProps} />} 
+                        />
+                   
+                    
+                    </Switch>
+                </Router>
             </div>
-          })
-        }
-        
-      </div>
-    )
-  }
+        )
+    }
 }
 
 
 
- export default App;
+
+
