@@ -20,11 +20,11 @@ import { getBeer } from './beer-api.js';
 
   render() {
     return (
-      <div>
+      <div className="App">
         <h2>BEERS:</h2>
         {
           this.state.beers.map((beer) => {
-            return <div>{beer.name} : {beer.domestic ? 'its domestic': 'nope'} : {beer.category} : { beer.price}
+            return <div className="display">Name: {beer.name} :Domestic: {beer.domestic ? 'YES' : 'NO'} Type: {beer.category} Price ${beer.price}
             </div>
           })
         }
