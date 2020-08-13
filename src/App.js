@@ -14,15 +14,26 @@ export default class App extends Component {
         return (
             <div>
                 <Router>
+                  <main>
                     <Switch>
                         <Route 
                             path="/" 
                             exact
                             render={(routerProps) => <ListBeer {...routerProps} />} 
                         />
-                   
+                   <Route 
+                            path="/create" 
+                            exact
+                            render={(routerProps) => <CreateBeer {...routerProps} />} 
+                        />
+                        <Route 
+                            path="/detail/:id" 
+                            exact
+                            render={(routerProps) => <DetailPage {...routerProps} />} 
+                        />
                     
                     </Switch>
+                    </main>
                 </Router>
             </div>
         )
