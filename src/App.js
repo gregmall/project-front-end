@@ -1,26 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { getBeer } from './beer-api.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+ class App extends React.Component {
+
+  state = {
+    beers: []
+
+  }
+
+  componentDidMount = async () => {
+    const data = await getBeer() 
+
+    this.setState({
+      beers: data.body
+    })
+  }
+
+
+  render() {
+    return (
+      <div>
+        <h2>BEERS:</h2>
+        {
+          this.state.beers.map((beer) => {
+            return <div>{beer.name} : {beer.domestic} {beer.category} : { beer.price}
+            </div>
+          })
+        }
+        
+      </div>
+    )
+  }
 }
 
-export default App;
+
+
+ export default App;
