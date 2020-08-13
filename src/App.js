@@ -24,7 +24,7 @@ import { getBeer } from './beer-api.js';
         <h2>BEERS:</h2>
         {
           this.state.beers.map((beer) => {
-            return <div>{beer.name} : {beer.domestic} {beer.category} : { beer.price}
+            return <div>{beer.name} : {beer.domestic ? 'its domestic': 'nope'} : {beer.category} : { beer.price}
             </div>
           })
         }
