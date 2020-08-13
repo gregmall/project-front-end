@@ -1,20 +1,30 @@
 .App {
   text-align: center;
+  display: flex;
+  padding: 50px;
+  align-items: center;
+  flex-direction: column;
   background-color: blanchedalmond;
-  height: 800px;
+  height: 100%;
 }
 h2{
   font-size: 50px;
+  font-family: cursive
 }
 .display{
   display:flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
   padding: 10px;
-  background-color: coral;
+  background-color: white;
   font-weight: bold;
   font-family: fantasy;
+  width: 600px;
   
 
+}
+img {
+  width:100px;
 }
 
 .App-logo {
