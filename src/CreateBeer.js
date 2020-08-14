@@ -22,7 +22,7 @@ export default class CreateBeer extends Component {
             price: this.state.price,
 
         })
-        window.location = ""
+        
     }
     handleImageChange = e => {
         this.setState({image: e.target.value});
@@ -47,14 +47,15 @@ export default class CreateBeer extends Component {
             <div className="create">
                 <h3>ENTER A BEER!</h3>
                 <form onSubmit={this.handleSubmit}>
+                <div><label>
+                        Enter Beer Name:
+                        <input onChange={this.handleNameChange} value={this.state.name} />
+                    </label></div>
                     <div><label>
                        Enter Image URL:
                         <input onChange={this.handleImageChange} value={this.state.image} />
                     </label></div>
-                    <div><label>
-                        Enter Beer Name:
-                        <input onChange={this.handleNameChange} value={this.state.name} />
-                    </label></div>
+                 
                     <div><label>
                         Domestic beer? (check box for 'yes')
                         <input name="isDomestic" type = "checkbox" onChange={this.handleDomesticChange} value={this.state.domestic} />

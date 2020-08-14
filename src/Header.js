@@ -8,8 +8,8 @@ export default class Header extends Component {
                  <img src="/beerslide.gif" alt="beer" />
                  <h2>BEER</h2>
                  <nav>
-                 <Link to='/create'>Create</Link>
-                    <Link to='/'>List</Link>
+                 <Link to='/create'>Create Beer</Link>
+                    <Link to='/'>Beer List</Link>
                 </nav>
                     </header>
         )
