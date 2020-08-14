@@ -19,10 +19,11 @@ export default class DetailPage extends Component {
     render() {
         return (
             <div>
-                <ul>Here is your beer:</ul>
+                <ul>Here is your beer:
                     <li>{this.state.name}</li>
                     <li>{this.state.category}</li>
                     <li>{this.state.price}</li>
+                </ul>
             </div>
         )
     }

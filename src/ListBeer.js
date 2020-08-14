@@ -6,20 +6,21 @@ export default class ListBeer extends Component {
         beers: []
     }
 
-    componentDidMount= async () => {
+    componentDidMount = async () => {
         const data = await getBeers()
-        this.setState({
+         this.setState({
             beers: data.body
         })
     }
 
     render() {
+        console.log(this.state.beers)
         return (
       <div className="beers">
-             
+              
         {
           this.state.beers.map((beer) => {
-            return <Link className="beer" to={`/detail/${beer.id}`} key ={`${beer.id}-${beer.name}`}>
+            return <Link className="display" to={`/detail/${beer.id}`} key ={`${beer.id}-${beer.name}`}>
                 <p><img src={beer.image} alt={beer.image} /> </p>
                 <p> Name :  {beer.name}</p>  
                 <p> Domestic: {beer.domestic ? 'YES' : 'NO'}</p> 

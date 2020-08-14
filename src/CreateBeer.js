@@ -29,13 +29,8 @@ export default class CreateBeer extends Component {
     handleNameChange = e => {
         this.setState({name: e.target.value});
     }
-    handleDomesticChange(event) {
-        const target = event.target;
-        const value = target.name === 'Domestic' ? target.checked : target.value;
-        const name = target.name;
-
-        
-        this.setState({[name]: value});
+    handleDomesticChange = e =>  {
+        this.setState({domestic: e.target.checked});
     }
     handleCategory = e => {
         this.setState({category: e.target.value});
@@ -77,7 +72,7 @@ export default class CreateBeer extends Component {
                         <input onChange={this.handPriceChange} type="number" value={this.state.price} />
                     </label>
 
-
+                    <button>make beer</button>
 
 
 

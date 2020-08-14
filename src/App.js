@@ -9,13 +9,21 @@ import ListBeer from './ListBeer.js';
 import DetailPage from './DetailPage.js';
 import CreateBeer from './CreateBeer.js';
 
+
 export default class App extends Component {
     render() {
         return (
             <div>
+              <h2>BEER</h2>
                 <Router>
-                  <main>
+               
+                <main>
+                  <div className="sidebar">
+                    <Link to='/create'>Create</Link>
+                    <Link to='/'>List</Link>
+                    </div>
                     <Switch>
+                    
                         <Route 
                             path="/" 
                             exact
