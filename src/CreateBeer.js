@@ -22,6 +22,7 @@ export default class CreateBeer extends Component {
             price: this.state.price,
 
         })
+        window.location = ""
     }
     handleImageChange = e => {
         this.setState({image: e.target.value});
@@ -44,21 +45,21 @@ export default class CreateBeer extends Component {
     render() {
         return (
             <div className="create">
-                <h2>ENTER A BEER!</h2>
+                <h3>ENTER A BEER!</h3>
                 <form onSubmit={this.handleSubmit}>
-                    <label>
-                        Enter Image URL:
+                    <div><label>
+                       Enter Image URL:
                         <input onChange={this.handleImageChange} value={this.state.image} />
-                    </label>
-                    <label>
+                    </label></div>
+                    <div><label>
                         Enter Beer Name:
                         <input onChange={this.handleNameChange} value={this.state.name} />
-                    </label>
-                    <label>
-                        Domestic? 
+                    </label></div>
+                    <div><label>
+                        Domestic beer? (check box for 'yes')
                         <input name="isDomestic" type = "checkbox" onChange={this.handleDomesticChange} value={this.state.domestic} />
-                    </label>
-                    <label>
+                    </label></div>
+                    <div><label>
                         Category:
                         <select onChange={this.handleCategory} value={this.state.category}>
                             <option value='pilsner'>Pilsner</option>
@@ -66,13 +67,13 @@ export default class CreateBeer extends Component {
                             <option value='lager'>Lager</option>
                             <option value='other'>Other</option>
                         </select>
-                    </label>
-                    <label>
+                    </label></div>
+                    <div><label>
                         Price:
                         <input onChange={this.handPriceChange} type="number" value={this.state.price} />
-                    </label>
+                    </label></div>
 
-                    <button>make beer</button>
+                    <button>MAKE BEER</button>
 
 
 

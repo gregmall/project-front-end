@@ -18,11 +18,13 @@ export default class DetailPage extends Component {
 
     render() {
         return (
-            <div>
-                <ul>Here is your beer:
-                    <li>{this.state.name}</li>
-                    <li>{this.state.category}</li>
-                    <li>{this.state.price}</li>
+            <div className="detail">
+                <ul>
+                    <li><img src={this.state.beer.image} alt={this.state.beer.image} /></li>
+                    <li>NAME: {this.state.beer.name}</li>
+                    <li>TYPE: {this.state.beer.category}</li>
+                    <li>DOMESTIC: {this.state.beer.domestic ? 'YES' : 'NO'}</li>
+                    <li>PRICE: ${this.state.beer.price}</li>
                 </ul>
             </div>
         )

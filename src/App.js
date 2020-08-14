@@ -1,27 +1,29 @@
 import React, { Component } from 'react'
+
 import {
     BrowserRouter as Router, 
     Route, 
     Switch,
-    Link
+    L
+    
 } from 'react-router-dom';
 import ListBeer from './ListBeer.js';
 import DetailPage from './DetailPage.js';
 import CreateBeer from './CreateBeer.js';
+import Header from './Header.js';
+
 
 
 export default class App extends Component {
     render() {
         return (
             <div>
-              <h2>BEER</h2>
+            
+             
                 <Router>
-               
-                <main>
-                  <div className="sidebar">
-                    <Link to='/create'>Create</Link>
-                    <Link to='/'>List</Link>
-                    </div>
+               <Header />
+                <main >
+              
                     <Switch>
                     
                         <Route 
