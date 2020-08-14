@@ -22,7 +22,7 @@ export default class CreateBeer extends Component {
             price: this.state.price,
 
         })
-        
+        this.props.history.push('/');
     }
     handleImageChange = e => {
         this.setState({image: e.target.value});
