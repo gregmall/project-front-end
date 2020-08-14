@@ -61,6 +61,10 @@ export default class CreateBeer extends Component {
                         <input name="isDomestic" type = "checkbox" onChange={this.handleDomesticChange} value={this.state.domestic} />
                     </label></div>
                     <div><label>
+                        Price:
+                        <input onChange={this.handPriceChange} type="number" value={this.state.price} />
+                    </label></div>
+                    <div><label>
                         Category:
                         <select onChange={this.handleCategory} value={this.state.category}>
                             <option value='pilsner'>Pilsner</option>
@@ -69,10 +73,7 @@ export default class CreateBeer extends Component {
                             <option value='other'>Other</option>
                         </select>
                     </label></div>
-                    <div><label>
-                        Price:
-                        <input onChange={this.handPriceChange} type="number" value={this.state.price} />
-                    </label></div>
+                  
 
                     <button>MAKE BEER</button>
 

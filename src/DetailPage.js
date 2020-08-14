@@ -23,8 +23,9 @@ export default class DetailPage extends Component {
                     <li><img src={this.state.beer.image} alt={this.state.beer.image} /></li>
                     <li>NAME: {this.state.beer.name}</li>
                     <li>TYPE: {this.state.beer.category}</li>
-                    <li>DOMESTIC: {this.state.beer.domestic ? 'YES' : 'NO'}</li>
                     <li>PRICE: ${this.state.beer.price}</li>
+                    <li>DOMESTIC: {this.state.beer.domestic ? 'YES' : 'NO'}</li>
+                    
                 </ul>
             </div>
         )

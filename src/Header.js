@@ -11,7 +11,7 @@ export default class Header extends Component {
                  <Link to='/create'>Create Beer</Link>
                     <Link to='/'>Beer List</Link>
                 </nav>
-                    </header>
+            </header>
         )
     }
 }

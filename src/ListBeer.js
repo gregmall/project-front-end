@@ -24,8 +24,9 @@ export default class ListBeer extends Component {
                 <p><img src={beer.image} alt={beer.image} /> </p>
                 <p> Name :  {beer.name}</p>  
                 <p> Domestic: {beer.domestic ? 'YES' : 'NO'}</p> 
-                <p> Type: {beer.category}</p>  
                 <p> Price ${beer.price}</p>
+                <p> Type: {beer.category}</p>
+                
             </Link>
           })
         }
