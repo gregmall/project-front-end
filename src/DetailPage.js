@@ -45,8 +45,8 @@ export default class DetailPage extends Component {
         );
 
         this.setState({
-            image: '',
-            name: '',
+            image: '/beer.gif',
+            name: 'Pabst',
             domestic: true,
             price: 3,
             category_id: 1,
@@ -121,7 +121,7 @@ export default class DetailPage extends Component {
 
 
                 </form>
-                      <button onCLick={this.handleDelete}>DELETE BEER</button>          
+                      <button onClick={this.handleDelete}>DELETE BEER</button>          
             </div>
         )
     }

@@ -14,7 +14,7 @@ export default class CreateBeer extends Component {
 
     componentDidMount = async () => {
         const categoryData = await getCategory()
-
+        console.log(categoryData.body);
         this.setState({
             category: categoryData.body
         })
@@ -50,7 +50,7 @@ export default class CreateBeer extends Component {
         this.setState({domestic: e.target.checked});
     }
     handleCategory = e => {
-        this.setState({category: e.target.value});
+        this.setState({category_id: e.target.value});
     }
     handPriceChange = e => {
         this.setState({price: e.target.value});

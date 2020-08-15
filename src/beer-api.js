@@ -28,7 +28,7 @@ export function getCategory() {
 }
 
 export function deleteBeer(id) {
-   
+   console.log(id);
     return request.delete(`${URL}/beers/${id}`);
   
         
