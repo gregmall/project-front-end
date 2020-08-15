@@ -2,7 +2,7 @@
 
 import request from 'superagent';
 
-const URL = 'https://frozen-reaches-38744.herokuapp.com';
+const URL = process.env.REACT_APP_API_URL || 'https://frozen-reaches-38744.herokuapp.com';
 
 export function getBeers() {
     return request.get(`${URL}/beers`);
