@@ -1,14 +1,23 @@
 import React, { Component } from 'react'
-import { createBeer } from './beer-api';
+import { createBeer, getCategory } from './beer-api';
 import './App.css';
 export default class CreateBeer extends Component {
     state = {
         image: '',
         name: '',
         domestic: true,
-        category: '',
+        category_id: 1,
         price: 0,
+        category: [],
 
+    }
+
+    componentDidMount = async () => {
+        const categoryData = await getCategory()
+
+        this.setState({
+            category: categoryData.body
+        })
     }
 
     handleSubmit = async (e) => {
@@ -18,10 +27,17 @@ export default class CreateBeer extends Component {
             image: this.state.image,
             name: this.state.name,
             domestic: this.state.domestic,
-            category: this.state.category,
+            category_id: this.state.category_id,
             price: this.state.price,
 
-        })
+        });
+        this.setState({
+            image:'/beer.gif',
+            name: '',
+            domestic: true,
+            price: 2,
+            category_id: 1
+        });
         this.props.history.push('/');
     }
     handleImageChange = e => {
@@ -67,10 +83,9 @@ export default class CreateBeer extends Component {
                     <div><label>
                         Category:
                         <select onChange={this.handleCategory} value={this.state.category}>
-                            <option value='pilsner'>Pilsner</option>
-                            <option value='micro brew'>Micro Brew</option>
-                            <option value='lager'>Lager</option>
-                            <option value='other'>Other</option>
+                        {
+                                this.state.category.map((cat) => <option value={cat.id}>{cat.name}</option>)
+                            }
                         </select>
                     </label></div>
                   

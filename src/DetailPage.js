@@ -121,7 +121,7 @@ export default class DetailPage extends Component {
 
 
                 </form>
-
+                      <button onCLick={this.handleDelete}>DELETE BEER</button>          
             </div>
         )
     }
