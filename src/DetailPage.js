@@ -49,7 +49,7 @@ export default class DetailPage extends Component {
             name: 'Pabst',
             domestic: true,
             price: 3,
-            category_id: 1,
+            category_id: 5,
             beer: updateBeer.body,
         });
     }
