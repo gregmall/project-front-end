@@ -109,9 +109,9 @@ export default class DetailPage extends Component {
                     </label></div>
                     <div><label>
                         Category:
-                        <select onChange={this.handleCategory} value={this.state.cat}>
+                        <select onChange={this.handleCategory} value={this.state.category}>
                             {
-                                this.state.category.map((cat) => <option value={cat.id}>{cat.name}</option>)
+                                this.state.category.map((category) => <option value={category.id}>{category.name}</option>)
                             }
                         </select>
                     </label></div>

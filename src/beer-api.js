@@ -37,6 +37,6 @@ export function deleteBeer(id) {
 
 export function updateBeer(id, updatedBeer) {
     
-     return request.put(`${URL}/beers/${id}`, updatedBeer);
+     return request.put(`${URL}beers/${id}`, updatedBeer);
     
 }
