@@ -5,8 +5,8 @@ export default class DetailPage extends Component {
     state = {
         beer:{},
         image: '/beer.gif',
-        name: 'swill',
-        category_id: 5,
+        name: '',
+        category_id: 1,
         domestic: true,
         price: 3,
         category: [],
@@ -17,7 +17,7 @@ export default class DetailPage extends Component {
         const data = await getBeer(this.props.match.params.id)
         const categoryData = await getCategory();
 
-        const matchingCategory = categoryData.body.find(cat => cat.name = data.body.category);
+        const matchingCategory = categoryData.body.find(cat=> cat.name = data.body.category);
 
         this.setState({
             category: categoryData.body,
@@ -40,19 +40,21 @@ export default class DetailPage extends Component {
                 domestic: this.state.domestic,
                 price: this.state.price,
                 category_id: this.state.category_id,
-
+                
             }
+            
         );
         const updatedBeer= await getBeer(this.props.match.params.id)
 
         this.setState({
-            image: '/beer.gif',
-            name: 'Pabst',
+            image: '',
+            name: '',
             domestic: true,
             price: 3,
-            category_id: 5,
+            category_id: 1,
             beer: updatedBeer.body,
         });
+        this.props.history.push('/');
     }
 
     handleImageChange = e => {
@@ -80,11 +82,12 @@ export default class DetailPage extends Component {
             <div className="detail">
                 <div>
                 <ul>
-                    <li><img className="image" src={this.state.beer.image} alt={this.state.beer.image} /></li>
+                    <li><img className="image"src={this.state.beer.image} alt={this.state.beer.image} /></li>
                     <li>NAME: {this.state.beer.name}</li>
                     <li>TYPE: {this.state.beer.category}</li>
                     <li>PRICE: ${this.state.beer.price}</li>
                     <li>DOMESTIC: {this.state.beer.domestic ? 'YES' : 'NO'}</li>
+                    <li><button className="deletebutton" onClick={this.handleDelete}>DELETE BEER</button></li>
                     
                 </ul>
                 </div>
@@ -110,7 +113,7 @@ export default class DetailPage extends Component {
                     </label></div>
                     <div><label>
                         Category:
-                        <select onChange={this.handleCategory} value={this.state.category}>
+                        <select onChange={this.handleCategory} value={this.state.category_id}>
                             {
                                 this.state.category.map((category) => <option value={category.id}>{category.name}</option>)
                             }
@@ -123,7 +126,7 @@ export default class DetailPage extends Component {
 
 
                 </form>
-                      <div><button onClick={this.handleDelete}>DELETE BEER</button></div>    
+                        
                       </div>      
             </div>
         )

@@ -2,7 +2,7 @@
 
 import request from 'superagent';
 
-const URL = 'http://localhost:3001';
+const URL = process.env.REACT_APP_API_URL;
 
 export function getBeers() {
     return request.get(`${URL}/beers`);
