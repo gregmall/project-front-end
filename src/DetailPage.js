@@ -43,6 +43,7 @@ export default class DetailPage extends Component {
 
             }
         );
+        const updatedBeer= await getBeer(this.props.match.params.id)
 
         this.setState({
             image: '/beer.gif',
@@ -50,7 +51,7 @@ export default class DetailPage extends Component {
             domestic: true,
             price: 3,
             category_id: 5,
-            beer: updateBeer.body,
+            beer: updatedBeer.body,
         });
     }
 
@@ -108,7 +109,7 @@ export default class DetailPage extends Component {
                     </label></div>
                     <div><label>
                         Category:
-                        <select onChange={this.handleCategory} value={this.state.category}>
+                        <select onChange={this.handleCategory} value={this.state.cat}>
                             {
                                 this.state.category.map((cat) => <option value={cat.id}>{cat.name}</option>)
                             }
