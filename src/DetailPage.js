@@ -17,7 +17,7 @@ export default class DetailPage extends Component {
         const data = await getBeer(this.props.match.params.id)
         const categoryData = await getCategory();
 
-        const matchingCategory = categoryData.body.find(cat=> cat.name = data.body.category);
+        const matchingCategory = categoryData.body.find(cat=> cat.name === data.body.category);
 
         this.setState({
             category: categoryData.body,
@@ -26,7 +26,8 @@ export default class DetailPage extends Component {
             name: data.body.name,
             domestic: data.body.domestic,
             price: data.body.price,
-            cat: matchingCategory.id
+            cat: matchingCategory,
+            category_id: matchingCategory.id,
         })
     }
     handleSubmit = async (e) => {
@@ -78,6 +79,7 @@ export default class DetailPage extends Component {
     }
 
     render() {
+        console.log(this.state.category)
         return (
             <div className="detail">
                 <div>
@@ -113,7 +115,7 @@ export default class DetailPage extends Component {
                     </label></div>
                     <div><label>
                         Category:
-                        <select onChange={this.handleCategory} value={this.state.category_id}>
+                        <select onChange={this.handleCategory} >
                             {
                                 this.state.category.map((category) => <option value={category.id}>{category.name}</option>)
                             }
