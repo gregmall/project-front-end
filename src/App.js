@@ -4,7 +4,7 @@ import {
     BrowserRouter as Router, 
     Route, 
     Switch,
-    L
+  
     
 } from 'react-router-dom';
 import ListBeer from './ListBeer.js';

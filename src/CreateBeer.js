@@ -82,9 +82,9 @@ export default class CreateBeer extends Component {
                     </label></div>
                     <div><label>
                         Category:
-                        <select onChange={this.handleCategory} value={this.state.category_id}>
+                        <select onChange={this.handleCategory} value={this.state.category}>
                         {
-                                this.state.category_id.map((category_id) => <option value={category_id.id}>{category_id.name}</option>)
+                                this.state.category.map((cat) => <option value={cat.id}>{cat.name}</option>)
                             }
                         </select>
                     </label></div>
