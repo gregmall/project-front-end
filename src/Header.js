@@ -5,7 +5,7 @@ export default class Header extends Component {
         return (
             <header className="header">
                  
-                 <img src="/beerslide.gif" alt="beer" />
+                 <img className="beergif" src="/beerslide.gif" alt="beer" />
                  <h2>BEER</h2>
                  <nav>
                  <Link to='/create'>Create Beer</Link>

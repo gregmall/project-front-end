@@ -21,7 +21,7 @@ export default class ListBeer extends Component {
         {
           this.state.beers.map((beer) => {
             return <Link className="display" to={`/detail/${beer.id}`} key ={`${beer.id}-${beer.name}`}>
-                <p><img src={beer.image} alt={beer.image} /> </p>
+                <p><img className="image" src={beer.image} alt={beer.image} /> </p>
                 <p> Name :  {beer.name}</p>  
                 <p> Domestic: {beer.domestic ? 'YES' : 'NO'}</p> 
                 <p> Price ${beer.price}</p>

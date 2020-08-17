@@ -80,7 +80,7 @@ export default class DetailPage extends Component {
             <div className="detail">
                 <div>
                 <ul>
-                    <li><img src={this.state.beer.image} alt={this.state.beer.image} /></li>
+                    <li><img className="image" src={this.state.beer.image} alt={this.state.beer.image} /></li>
                     <li>NAME: {this.state.beer.name}</li>
                     <li>TYPE: {this.state.beer.category}</li>
                     <li>PRICE: ${this.state.beer.price}</li>
@@ -88,6 +88,7 @@ export default class DetailPage extends Component {
                     
                 </ul>
                 </div>
+                <div className="create">
                 <h3>Update this beer?</h3>
                 <form onSubmit={this.handleSubmit}>
                 <div><label>
@@ -117,12 +118,13 @@ export default class DetailPage extends Component {
                     </label></div>
                   
 
-                    <button>UPDATE THAT BEER</button>
+                    <div><button>UPDATE THAT BEER</button></div>
 
 
 
                 </form>
-                      <button onClick={this.handleDelete}>DELETE BEER</button>          
+                      <div><button onClick={this.handleDelete}>DELETE BEER</button></div>    
+                      </div>      
             </div>
         )
     }

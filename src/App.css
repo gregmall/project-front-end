@@ -27,11 +27,15 @@ h2{
   
 
 }
-img {
+.beergif {
+  width: 200px;
+}
+
+.image {
   width:200px;
   
 }
-img:hover {
+.image:hover {
   transform: scale(.75);
 }
 
