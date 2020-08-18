@@ -1,15 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
 
 
-.App {
-  text-align: center;
-  display: flex;
-  padding: 50px;
-  align-items: center;
-  flex-direction: column;
-  background-color: blanchedalmond;
-  height: 100%;
-}
 h1{
   font-size: 80px;
   
@@ -24,6 +15,7 @@ h1{
   -webkit-animation: blink 12s infinite;
   
 }
+
 .display{
   display:flex;
   justify-content: center;
@@ -37,13 +29,31 @@ h1{
   margin: 10px;
   box-shadow: 5px 10px #888888;
   
-  
-
 }
+
 .deletebutton {
   background-color: darkorange;
   color:  white;
+  border-radius: 6px;
+  font-size: 20px;
 }
+.deletebutton:hover {
+  background-color: #f44336;
+  color: white;
+  
+}
+.makebutton{
+  font-size: 20px;
+  background-color: yellow;
+  border-radius: 6px;
+  margin: 10px;
+
+}
+.makebutton:hover {
+  background-color: greenyellow;
+}
+
+
 .beergif {
   width: 200px;
   margin: 10px;
@@ -63,25 +73,27 @@ ul {
   width: 300px;
   background-color: white;
  
-  
 }
+
 li {
   padding: 20px;
   font-size: 20px;
 }
+
 .create {
   padding: 20px;
   font-size: 20px;
-  
   display: flex;
   flex-direction: column;
 }
+
 .detail {
   display: flex;
   align-items: center;
   justify-content: center;
   
 }
+
 .create {
   border: 2px solid black;
   display: flex;
@@ -89,21 +101,21 @@ li {
   justify-content: center;
   width: 400px;
   background-color: white;
+ 
 }
+
 .beers {
   display:flex;
   flex-wrap: wrap;
   padding: 10px;
- 
-
 }
+
 .header {
   display: flex;
   padding: 20px;
   background-color: #eb6434;
-
-
 }
+
 nav {
   font-size: 25px;
   display: flex;
@@ -112,14 +124,17 @@ nav {
   flex-direction: column;
   padding: 20px;
 }
+
 main {
   background-image: url("http://adwallpapers.xyz/uploads/posts/8979-beer-background.jpg");
   min-height: 100vh;
 }
+
 a {
   text-decoration: none;
   color: black;
 }
+
 a:hover{
   color: #ffa500
 }

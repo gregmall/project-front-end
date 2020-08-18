@@ -90,7 +90,7 @@ export default class CreateBeer extends Component {
                     </label></div>
                   
 
-                    <button>MAKE BEER</button>
+                    <button className="makebutton">MAKE BEER</button>
 
 
 

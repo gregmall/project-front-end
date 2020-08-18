@@ -17,7 +17,7 @@ export default class DetailPage extends Component {
         const data = await getBeer(this.props.match.params.id)
         const categoryData = await getCategory();
 
-        const matchingCategory = categoryData.body.find(cat=> cat.name === data.body.category);
+        const matchingCategory = categoryData.body.find(cat => cat.name === data.body.category);
 
         this.setState({
             category: categoryData.body,
@@ -74,8 +74,12 @@ export default class DetailPage extends Component {
         this.setState({price: e.target.value});
     }
     handleDelete = async () => {
-        await deleteBeer(this.props.match.params.id);
-        this.props.history.push('/');
+        if (window.confirm('Do you really want to delete this beer?')) { 
+            await deleteBeer(this.props.match.params.id);
+            this.props.history.push('/');
+          }
+       
+           this.props.history.push('/');
     }
 
     render() {
@@ -123,7 +127,7 @@ export default class DetailPage extends Component {
                     </label></div>
                   
 
-                    <div><button>UPDATE THAT BEER</button></div>
+                    <div><button className="makebutton">UPDATE THAT BEER</button></div>
 
 
 
