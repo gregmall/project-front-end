@@ -18,7 +18,7 @@ export default class DetailPage extends Component {
         const categoryData = await getCategory();
 
         const matchingCategory = categoryData.body.find(cat => cat.name === data.body.category);
-
+        
         this.setState({
             category: categoryData.body,
             beer: data.body,

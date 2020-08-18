@@ -31,6 +31,7 @@ nav {
   background-color: white;
   font-weight: bold;
   font-family: cursive;
+  font-size: 20px;
   border: 2px black solid;
   margin: 10px;
   box-shadow: 5px 10px #888888;
@@ -138,6 +139,7 @@ main {
 
 a {
   text-decoration: none;
+  cursor: pointer;
   color: black;
 }
 

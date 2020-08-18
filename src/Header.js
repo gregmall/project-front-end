@@ -9,11 +9,11 @@ export default class Header extends Component {
                  <h1>Beer</h1>
                  <nav>
                      <div>
-                 <Link to='/create'>Create Beer</Link>
-                 </div>
-                 <div>
-                    <Link to='/'>Beer List</Link>
-                </div>
+                        <Link to='/create'>Create Beer</Link>
+                     </div>
+                    <div>
+                        <Link to='/'>Beer List</Link>
+                    </div>
                 </nav>
             </header>
         )
