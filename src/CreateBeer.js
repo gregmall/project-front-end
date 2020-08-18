@@ -68,7 +68,7 @@ export default class CreateBeer extends Component {
                         <input onChange={this.handleNameChange} value={this.state.name} />
                     </label></div>
                     <div><label>
-                       Enter Image URL:
+                       Enter Image URL: 
                         <input onChange={this.handleImageChange} value={this.state.image} />
                     </label></div>
                  
