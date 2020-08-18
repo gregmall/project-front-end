@@ -15,6 +15,12 @@ h1{
   -webkit-animation: blink 12s infinite;
   
 }
+nav {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .display{
   display:flex;
